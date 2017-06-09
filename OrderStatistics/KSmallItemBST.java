@@ -23,7 +23,7 @@ public class KSmallItemBST {
 			inOrder(root,count,i);
 		}
 	}
-	
+	// Stores the count at every node in the occurence of their in order traversal.
 	public void inOrder(Node node, int[] count,int target){
 		if(node.isLeaf()){
 			count[0] = count[0] + 1;
@@ -41,6 +41,7 @@ public class KSmallItemBST {
 		else inOrder(node.right,count,target);
 	}
 	
+	// This method computes total left nodes and right nodes at each node. 
 	public Node ComputeStats(Node node){
 
 		if(node == null)
@@ -65,7 +66,7 @@ public class KSmallItemBST {
 		}
 		return node;
 	}
-	
+	// This uses totalnodes at each node and then it takes the path.
 	public Node getKNode(Node node,int k){
 		if(node.totalNodes < k)
 			return null;
